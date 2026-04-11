@@ -10,8 +10,8 @@ class FreelancerMarket(gl.Contract):
     job_counter: u256
     job_data: DynArray[str]
 
-    def __init__(self, owner_address: str):
-        self.owner = Address(owner_address)
+    def __init__(self, owner_address: Address):
+        self.owner = owner_address
         self.job_counter = u256(0)
 
     @gl.public.view
@@ -202,3 +202,5 @@ No extra text."""
                 self.job_data[i] = f"{key}{value}"
                 return
         self.job_data.append(f"{key}{value}")
+
+    
