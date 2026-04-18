@@ -48,6 +48,8 @@ Go to GenLayer Studio at https://studio.genlayer.com and create a new file calle
 
 Follow this order and wait for FINALIZED at each step. Run get_summary first, then post_job, then accept_job with a freelancer address, then submit_deliverable with a URL, then verify_deliverable to trigger the AI check, then get_job to see the verdict. If rejected you can run resubmit_deliverable and verify_deliverable again.
 
+Note: the contract in this repository uses the Address type in the constructor as required by genvm-lint. When deploying in GenLayer Studio use a version that receives str in the constructor and converts internally with Address(owner_address) since Studio requires primitive types to parse the contract schema correctly.
+
 ---
 
 ## Resources
